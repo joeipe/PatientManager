@@ -1,0 +1,40 @@
+<h1>Home</h1>
+<h3><span class="badge badge-secondary">Patients</span></h3>
+<p-table [value]="patients">
+  <ng-template pTemplate="caption">
+    <div class="d-flex justify-content-between">
+      <p-button label="Add" (onClick)="onAddClick()"></p-button>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>DoB</th>
+      <th>Address</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-patient>
+    <tr>
+      <td>
+        <button
+          pButton
+          type="button"
+          label="{{ patient.name }}"
+          class="p-button-link"
+          (click)="onNameClick(patient.id)"
+        ></button>
+      </td>
+      <td>{{ patient.doB }}</td>
+      <td>{{ patient.address }}</td>
+      <td>
+        <p-button
+          label="Clinical Notes"
+          icon="pi pi-users"
+          styleClass="p-button-warning"
+          badgeClass="p-badge-danger"
+          (click)="onClinicalNotesClick(patient.id)"
+        ></p-button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

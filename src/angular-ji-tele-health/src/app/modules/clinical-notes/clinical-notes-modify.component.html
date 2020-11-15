@@ -1,0 +1,43 @@
+<h1>{{ action }} Clinical Notes</h1>
+<div class="d-flex justify-content-between">
+  <p-button label="Back" (onClick)="onBackClick()"></p-button>
+</div>
+<form novalidate [formGroup]="form">
+  <div class="form-group row">
+    <label for="Description" class="col-sm-2 col-form-label required"
+      >Description</label
+    >
+    <div class="col-sm-10">
+      <input
+        pInputText
+        class="form-control"
+        id="Description"
+        formControlName="Description"
+        type="text"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="Details" class="col-sm-2 col-form-label required"
+      >Details</label
+    >
+    <p-editor
+      id="Details"
+      formControlName="Details"
+      [style]="{ height: '320px' }"
+    ></p-editor>
+  </div>
+  <div class="d-flex justify-content-left">
+    <p-button
+      label="Submit"
+      (onClick)="onSubmitClick()"
+      [disabled]="!form.valid"
+    ></p-button
+    >&nbsp;
+    <p-button
+      label="Delete"
+      (onClick)="onDeleteClick()"
+      *ngIf="id !== 0"
+    ></p-button>
+  </div>
+</form>

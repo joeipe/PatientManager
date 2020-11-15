@@ -1,0 +1,57 @@
+<h1>{{ action }} Patient</h1>
+<div class="d-flex justify-content-between">
+  <p-button label="Back" (onClick)="onBackClick()"></p-button>
+</div>
+<form novalidate [formGroup]="form">
+  <div class="form-group row">
+    <label for="Name" class="col-sm-2 col-form-label required">Name</label>
+    <div class="col-sm-10">
+      <input
+        pInputText
+        class="form-control"
+        id="Name"
+        formControlName="Name"
+        type="text"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="DoB" class="col-sm-2 col-form-label required">DoB</label>
+    <div class="col-sm-10 d-flex justify-content-between">
+      <p-calendar
+        id="DoB"
+        formControlName="DoB"
+        type="text"
+        dateFormat="dd/mm/yy"
+        dataType="string"
+      ></p-calendar>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="Address" class="col-sm-2 col-form-label required"
+      >Address</label
+    >
+    <div class="col-sm-10">
+      <input
+        pInputText
+        class="form-control"
+        id="Address"
+        formControlName="Address"
+        type="text"
+      />
+    </div>
+  </div>
+  <div class="d-flex justify-content-left">
+    <p-button
+      label="Submit"
+      (onClick)="onSubmitClick()"
+      [disabled]="!form.valid"
+    ></p-button
+    >&nbsp;
+    <p-button
+      label="Delete"
+      (onClick)="onDeleteClick()"
+      *ngIf="patientId !== 0"
+    ></p-button>
+  </div>
+</form>
