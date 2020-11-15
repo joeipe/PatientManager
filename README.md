@@ -4,5 +4,5 @@
 	use: .net commands to run the solution
 
 ## Angular Web Client
-	use: npm install
-	use: npm start to run the angular code.
+	use: `npm install`
+	use: `npm start`
