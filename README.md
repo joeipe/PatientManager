@@ -1,8 +1,8 @@
-# temp
+# TeleHealth_PatientManager
 
-Server Side API is written in .Net
+## .Net API
 	use: .net commands to run the solution
 
-The Client Side is written in Angular
+## Angular Web Client
 	use: npm install
 	use: npm start to run the angular code.
