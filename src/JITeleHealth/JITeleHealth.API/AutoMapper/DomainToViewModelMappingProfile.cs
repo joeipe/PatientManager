@@ -1,0 +1,21 @@
+﻿using AutoMapper;
+using JITeleHealth.API.ExtensionMethods;
+using JITeleHealth.API.ViewModels;
+using JITeleHealth.Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace JITeleHealth.API.AutoMapper
+{
+    public class DomainToViewModelMappingProfile : Profile
+    {
+        public DomainToViewModelMappingProfile()
+        {
+            CreateMap<Patient, PatientVM>()
+                .ForMember(dest => dest.DoB, opt => opt.MapFrom(src => src.DoB.ParseDate()));
+            CreateMap<ClinicalNote, ClinicalNoteVM>();
+        }
+    }
+}
