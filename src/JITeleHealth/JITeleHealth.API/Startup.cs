@@ -39,7 +39,7 @@ namespace JITeleHealth.API
                 {
                     builder.AllowAnyHeader()
                     .AllowAnyMethod()
-                    .SetIsOriginAllowed(origin => origin == "http://localhost:4200")
+                    .SetIsOriginAllowed(origin => origin == "http://localhost:4200" || origin == "http://localhost:3000")
                     .AllowCredentials();
                 });
             });
